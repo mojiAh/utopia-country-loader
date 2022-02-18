@@ -14,7 +14,7 @@ const Regions = ({
 }: Props) => (
   <Grid
     justify={'center'}
-    style={{ marginTop: 35, marginBottom: 35 }}
+    style={{ marginTop: 15, marginBottom: 15, alignSelf: 'flex-start' }}
     gutter={40}
   >
     {regions.map((region, idx) => (

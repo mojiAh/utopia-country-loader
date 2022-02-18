@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Grid, Title, Container } from '@mantine/core';
+import { Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import Countries from '../Countries';
 import Regions from '../Regions';
@@ -31,17 +31,17 @@ const Body = () => {
   }, []);
 
   return (
-    <Grid className={'body'}>
-      <Grid className={'body-title'}>
+    <div className={'body'}>
+      <div className={'body-title'}>
         <Title align={'center'} order={matches ? 2 : 4}>
           {'Select region and click on the countries you want to highlight'}
         </Title>
-      </Grid>
-      <Container size="xs">
+      </div>
+      <div className={`body-rest ${!matches ? 'small' : null}`}>
         <Regions {...{ regions, selectedRegion, setSelectedRegion }} />
         <Countries {...{ countries, region: selectedRegion }} />
-      </Container>
-    </Grid>
+      </div>
+    </div>
   );
 };
 
